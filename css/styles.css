@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+    color: #dbd9d9;
+}
+
+#theme-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#theme-toggle {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color:rgb(58,58,60);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 2.5px;
+    left: 2.5px;
+    transition: left 0.3s, background-color 0.3s;
+}
+
+.checkbox:checked + #theme-toggle {
+    background-color: #565656;
+}
+
+.checkbox:checked + #theme-toggle:before {
+    left: 27.5px;
+    background-color: white;
+}
+
+.checkbox {
+    display: none;
+}
+
+body.light-mode {
+    background-color: #dbd9d9;
+    color: black;
+}
+
+body.light-mode .square {
+    background-color: #dbd9d9;
+    color: black;
+    border: 1px solid black;
+}
+
+body.light-mode header {
+    border-bottom: 1px solid rgb(200,200,200);
+}
+
+body.light-mode .title {
+    color: black;
+}
+
+body.light-mode #container {
+    background-color: #dbd9d9;
+}
+
+body.light-mode #keyboard-row button {
+    background-color: #dbd9d9;
+    color: black;
+    border: 2px solid #aaa;
+}
+
+body.light-mode #keyboard-row button:hover {
+    background-color: #ccc;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    height: 100%;
+}
+
+header {
+    border-bottom: 1px solid rgb(58,58,58);
+}
+
+.title {
+    color: gainsboro;
+    padding: 15px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#game {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+}
+
+#board-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    box-sizing: border-box;
+    padding: 100px;
+}
+
+.square {
+    border: 2px solid rgb(58,58,58);
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #dbd9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+#keyborad-container {
+    height: 200px;
+}
+
+#keyboard-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#keyboard-row button {
+    flex-grow: 1;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: #565656;
+    margin: 1px 1px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    font-family: inherit;
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+}
+
+#keyboard-row button:hover {
+    background-color: #bbb;
+}
